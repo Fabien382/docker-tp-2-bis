@@ -1,0 +1,121 @@
+[2023-05-29 17:38:08] local.DEBUG: Process Apps dispatched  
+[2023-05-29 17:38:09] local.DEBUG: Process Apps dispatched  
+[2023-05-29 17:38:10] local.DEBUG: Update of all apps triggered!  
+[2023-05-29 17:38:10] local.DEBUG: Update of all apps finished!  
+[2023-05-29 17:38:10] local.DEBUG: Process Apps dispatched  
+[2023-05-29 17:43:12] local.DEBUG: Process Apps dispatched  
+[2023-05-29 17:44:30] local.DEBUG: Process Apps dispatched  
+[2023-05-29 17:49:56] local.DEBUG: Process Apps dispatched  
+[2023-05-29 17:55:24] local.DEBUG: Process Apps dispatched  
+[2023-05-29 17:57:06] local.DEBUG: Process Apps dispatched  
+[2023-05-29 17:58:15] local.DEBUG: Process Apps dispatched  
+[2023-05-29 17:58:18] local.DEBUG: Process Apps dispatched  
+[2023-05-29 17:58:21] local.DEBUG: Process Apps dispatched  
+[2023-05-29 17:58:33] local.DEBUG: Process Apps dispatched  
+[2023-05-29 17:58:33] local.DEBUG: Get app triggered for: 8a846dca305866d821748c007cf6b64adf00ea22  
+[2023-05-29 17:58:33] local.DEBUG: Download triggered for stdClass Object
+(
+    [appid] => 8a846dca305866d821748c007cf6b64adf00ea22
+    [name] => Bitwarden
+    [website] => https://bitwarden.com
+    [license] => GNU Affero General Public License v3.0
+    [description] => Open source password management solutions for individuals, teams, and business organizations.
+    [enhanced] => 
+    [tile_background] => dark
+    [icon] => bitwarden.svg
+    [sha] => 2a67c1eb11412b228577c993cf217fc866c66f04
+    [class] => \App\SupportedApps\Bitwarden\Bitwarden
+)
+  
+[2023-05-29 17:58:57] local.DEBUG: Get app triggered for: 060b3b99f88e96085b4a68e095bc9e3d1d91e1bc  
+[2023-05-29 17:58:57] local.DEBUG: Download triggered for stdClass Object
+(
+    [appid] => 060b3b99f88e96085b4a68e095bc9e3d1d91e1bc
+    [name] => Gitea
+    [website] => https://gitea.io
+    [license] => MIT License
+    [description] => Gitea is a community managed fork of Gogs, lightweight code hosting solution written in Go and published under the MIT license.
+    [enhanced] => 
+    [tile_background] => dark
+    [icon] => gitea.svg
+    [sha] => 9367839859b83454562a0dedf6eaea46947122ec
+    [class] => \App\SupportedApps\Gitea\Gitea
+)
+  
+[2023-05-29 18:25:49] local.DEBUG: Get app triggered for: e782bdad5e303d079375eac9d6b2bc03ed4fb7c5  
+[2023-05-29 18:25:49] local.DEBUG: Download triggered for stdClass Object
+(
+    [appid] => e782bdad5e303d079375eac9d6b2bc03ed4fb7c5
+    [name] => Papermerge
+    [website] => https://www.papermerge.com/
+    [license] => Apache License 2.0
+    [description] => Papermerge is an open source document management system (DMS) primarily designed for archiving and retrieving your digital documents. Instead of having piles of paper documents all over your desk, office or drawers - you can quickly scan them and configure your scanner to directly upload to Papermerge DMS. Papermerge DMS on its turn will extract text data from the scanned documents using Optical Character Recognition (OCR) technology the index it and make it searchable. You will be able to quickly find any (scanned!) document using full text search capabilities.
+
+Papermerge is perfect tool to manage documents in PDF, JPEG, TIFF and PNG formats.
+    [enhanced] => 
+    [tile_background] => dark
+    [icon] => papermerge.svg
+    [sha] => 8b71c56ea9c410f4c615820b0c5fa8815f4ba0c9
+    [class] => \App\SupportedApps\Papermerge\Papermerge
+)
+  
+[2023-05-29 18:26:12] local.DEBUG: Get app triggered for: 5d53e53a12af92b47e8c11af1a399b23b67efb61  
+[2023-05-29 18:26:12] local.DEBUG: Download triggered for stdClass Object
+(
+    [appid] => 5d53e53a12af92b47e8c11af1a399b23b67efb61
+    [name] => openvscode-server
+    [website] => https://github.com/gitpod-io/openvscode-server
+    [license] => MIT License
+    [description] => This project provides a version of VS Code that runs a server on a remote machine and allows access through a modern web browser. It's based on the very same architecture used by Gitpod or GitHub Codespaces at scale.
+    [enhanced] => 
+    [tile_background] => dark
+    [icon] => openvscodeserver.png
+    [sha] => 5aa4f32e7db4b701a805883a5296c102c997a739
+    [class] => \App\SupportedApps\openvscodeserver\openvscodeserver
+)
+  
+[2023-05-29 18:26:33] local.DEBUG: Get app triggered for: aebda823a279b219476c565be863d83739999502  
+[2023-05-29 18:26:33] local.DEBUG: Download triggered for stdClass Object
+(
+    [appid] => aebda823a279b219476c565be863d83739999502
+    [name] => Plex
+    [website] => https://www.plex.tv
+    [license] => Freemium
+    [description] => Plex media server allows you to aggregate all your personal media and access it anywhere you go. Enjoy your own content on all your devices with Plex.
+    [enhanced] => 1
+    [tile_background] => dark
+    [icon] => plex.png
+    [sha] => a2adcd1b7c59861f74fc283951495f7044491e08
+    [class] => \App\SupportedApps\Plex\Plex
+)
+  
+[2023-05-29 18:26:54] local.DEBUG: Get app triggered for: 361732e3fd1161330a49bebcccb955241621e1b1  
+[2023-05-29 18:26:54] local.DEBUG: Download triggered for stdClass Object
+(
+    [appid] => 361732e3fd1161330a49bebcccb955241621e1b1
+    [name] => Synclounge
+    [website] => https://github.com/samcm/SyncLounge
+    [license] => MIT License
+    [description] => SyncLounge (Previously PlexTogether) is a tool to sync Plex content across multiple players in multiple locations.
+    [enhanced] => 
+    [tile_background] => dark
+    [icon] => synclounge.png
+    [sha] => 1cb4ef954be18518d5f89805292963e7ef61f383
+    [class] => \App\SupportedApps\Synclounge\Synclounge
+)
+  
+[2023-05-29 18:27:12] local.DEBUG: Get app triggered for: 73821d23ad8bb436e7478fec8305ad0636c17d7a  
+[2023-05-29 18:27:12] local.DEBUG: Download triggered for stdClass Object
+(
+    [appid] => 73821d23ad8bb436e7478fec8305ad0636c17d7a
+    [name] => Piwigo
+    [website] => piwigo.org
+    [license] => GNU General Public License v2.0 only
+    [description] => Piwigo is an open source photo galley software. Designed as an alternative to Picasa or Flickr it can be self-hosted or used as a service. It offers many plugins, and offers full photo management capabilities
+    [enhanced] => 
+    [tile_background] => light
+    [icon] => piwigo.png
+    [sha] => ac68ae216dd5c41d7a0ae53946e71c5d81bc2301
+    [class] => \App\SupportedApps\Piwigo\Piwigo
+)
+  

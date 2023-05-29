@@ -1,0 +1,140 @@
+version: "2.1"
+services:
+  swag:
+    image: lscr.io/linuxserver/swag # Image Docker pour SWAG (Serveur Web Automatisé de Gestion de Certificats)
+    container_name: swag # Nom du conteneur
+    cap_add:
+      - NET_ADMIN # Ajoute la possibilité d'accéder aux fonctionnalités réseau avancées
+    environment:
+      - PUID=1000 # ID utilisateur pour l'attribution des droits de fichier
+      - PGID=1000 # ID de groupe pour l'attribution des droits de fichier
+      - TZ=Europe/Paris # Fuseau horaire
+      - URL=canarddns.duckdns.org # URL de votre domaine
+      - SUBDOMAINS=wildcard # Configuration des sous-domaines
+      - VALIDATION=duckdns # Méthode de validation du domaine
+      - DUCKDNSTOKEN=f97e2e49-3a46-47bb-a2bd-f0340660c79c # Token d'accès DuckDNS
+      - EMAIL=fabali123@gmail.com # Adresse e-mail pour les notifications
+    volumes:
+      - ./swag/config:/config # Montage du dossier de configuration de SWAG
+    ports:
+      - 443:443 # Port d'écoute HTTPS
+      - 8080:80 # Port d'écoute HTTP (facultatif)
+    restart: unless-stopped
+
+  heimdall:
+    image: lscr.io/linuxserver/heimdall:latest # Image Docker pour Heimdall (Tableau de bord personnel)
+    container_name: heimdall # Nom du conteneur
+    environment:
+      - PUID=1000 # ID utilisateur pour l'attribution des droits de fichier
+      - PGID=1000 # ID de groupe pour l'attribution des droits de fichier
+      - TZ=Europe/Paris # Fuseau horaire
+    volumes:
+      - ./swag/heimdall/config:/config # Montage du dossier de configuration de Heimdall
+    restart: unless-stopped
+
+  gitea:
+    image: gitea/gitea:latest # Image Docker pour Gitea (Gestionnaire de dépôts Git)
+    container_name: gitea # Nom du conteneur
+    environment:
+      - PUID=1000 # ID utilisateur pour l'attribution des droits de fichier
+      - PGID=1000 # ID de groupe pour l'attribution des droits de fichier
+      - TZ=Europe/Paris # Fuseau horaire
+    volumes:
+      - ./swag/gitea:/data # Montage du dossier de données de Gitea
+    restart: unless-stopped
+
+  bitwarden:
+    image: bitwardenrs/server:latest # Image Docker pour Bitwarden (Gestionnaire de mots de passe)
+    container_name: bitwarden # Nom du conteneur
+    environment:
+      - PUID=1000 # ID utilisateur pour l'attribution des droits de fichier
+      - PGID=1000 # ID de groupe pour l'attribution des droits de fichier
+      - TZ=Europe/Paris # Fuseau horaire
+    volumes:
+      - ./swag/bitwarden:/data # Montage du dossier de données de Bitwarden
+    restart: unless-stopped
+
+  plik:
+    image: rootgg/plik:latest # Image Docker pour Plik (Partage de fichiers)
+    container_name: plik # Nom du conteneur
+    environment:
+      - PUID=1000 # ID utilisateur pour l'attribution des droits de fichier
+      - PGID=1000 # ID de groupe pour l'attribution des droits de fichier
+      - TZ=Europe/Paris # Fuseau horaire
+    volumes:
+      - ./swag/plik:/data # Montage du dossier de données de Plik
+    restart: unless-stopped
+
+  spacedech:
+    image: akito13/spacedeck:latest # Image Docker pour SpaceDeck (Tableau de bord personnel)
+    container_name: spacedeck # Nom du conteneur
+    environment:
+      - PUID=1000 # ID utilisateur pour l'attribution des droits de fichier
+      - PGID=1000 # ID de groupe pour l'attribution des droits de fichier
+      - TZ=Europe/Paris # Fuseau horaire
+    volumes:
+      - ./swag/spacedeck:/data # Montage du dossier de données de SpaceDeck
+    restart: unless-stopped
+
+  papermerge:
+    image: papermerge/papermerge:latest # Image Docker pour Papermerge (Gestionnaire de documents)
+    container_name: papermerge # Nom du conteneur
+    environment:
+      - PUID=1000 # ID utilisateur pour l'attribution des droits de fichier
+      - PGID=1000 # ID de groupe pour l'attribution des droits de fichier
+      - TZ=Europe/Paris # Fuseau horaire
+    volumes:
+      - ./swag/papermerge:/data # Montage du dossier de données de Papermerge
+    restart: unless-stopped
+
+  code-server:
+    image: codercom/code-server:latest # Image Docker pour Code Server (IDE en ligne)
+    container_name: code-server # Nom du conteneur
+    environment:
+      - PUID=1000 # ID utilisateur pour l'attribution des droits de fichier
+      - PGID=1000 # ID de groupe pour l'attribution des droits de fichier
+      - TZ=Europe/Paris # Fuseau horaire
+    volumes:
+      - ./swag/code-server:/data # Montage du dossier de données de Code Server
+    restart: unless-stopped
+
+  plex:
+    image: plexinc/pms-docker:latest # Image Docker pour Plex Media Server (Serveur multimédia)
+    container_name: plex # Nom du conteneur
+    environment:
+      - PUID=1000 # ID utilisateur pour l'attribution des droits de fichier
+      - PGID=1000 # ID de groupe pour l'attribution des droits de fichier
+      - TZ=Europe/Paris # Fuseau horaire
+    volumes:
+      - ./swag/plex:/data # Montage du dossier de données de Plex
+    restart: unless-stopped
+
+  synclounge:
+    image: lscr.io/linuxserver/synclounge:latest # Image Docker pour SyncLounge (Partage de vidéos)
+    container_name: synclounge # Nom du conteneur
+    environment:
+      - PUID=1000 # ID utilisateur pour l'attribution des droits de fichier
+      - PGID=1000 # ID de groupe pour l'attribution des droits de fichier
+      - TZ=Europe/Paris # Fuseau horaire
+      - URL=canarddns.duckdns.org # URL de votre domaine
+      - SUBDOMAINS=www # Configuration des sous-domaines
+      - VALIDATION=duckdns # Méthode de validation du domaine
+      - DUCKDNSTOKEN=f97e2e49-3a46-47bb-a2bd-f0340660c79c # Token d'accès DuckDNS
+    volumes:
+      - ./swag/synclounge:/config # Montage du dossier de configuration de SyncLounge
+    restart: unless-stopped
+
+  piwigo:
+    image: linuxserver/piwigo:latest # Image Docker pour Piwigo (Galerie d'images)
+    container_name: piwigo # Nom du conteneur
+    environment:
+      - PUID=1000 # ID utilisateur pour l'attribution des droits de fichier
+      - PGID=1000 # ID de groupe pour l'attribution des droits de fichier
+      - TZ=Europe/Paris # Fuseau horaire
+      - URL=canarddns.duckdns.org # URL de votre domaine
+      - SUBDOMAINS=www # Configuration des sous-domaines
+      - VALIDATION=duckdns # Méthode de validation du domaine
+      - DUCKDNSTOKEN=f97e2e49-3a46-47bb-a2bd-f0340660c79c # Token d'accès DuckDNS
+    volumes:
+      - ./swag/piwigo:/config # Montage du dossier de configuration de Piwigo
+    restart: unless-stopped
